@@ -96,14 +96,14 @@ class PostTest extends DuskTestCase
             'user_id' => User::factory()->create()->id,
         ])->create();
 
-        $this->browse(function (Browser $browser) use ($post) {
-            $browser->loginAs($post->user)
-                ->visit('/')
-                ->clickLink($post->title)
-                ->assertSee('Delete Post')
-                ->click('button[type="submit"]')
-                ->assertSee('Post was deleted successfully')
-                ->assertDontSee($post->title);
-        });
+        // $this->browse(function (Browser $browser) use ($post) {
+        //     $browser->loginAs($post->user)
+        //         ->visit('/')
+        //         ->clickLink($post->title)
+        //         ->assertSee('Delete Post')
+        //         ->click('button[type="submit"]')
+        //         ->assertSee('Post was deleted successfully')
+        //         ->assertDontSee($post->title);
+        // });
     }
 }
